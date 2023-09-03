@@ -5,6 +5,32 @@ import org.junit.jupiter.api.Test
 
 class Test {
     @Test
+    fun teamTeamServiceTest() {
+        val clazz = teamServiceTestClass.checkBaseDefinition()
+        teamServiceCompanionTestClass.checkBaseDefinition()
+        teamServiceTestClass.checkFieldsDefinition(clazz, false)
+        val identifierFactoryClazz = identifierFactoryClass.getJavaClass()
+        teamServiceTestClass.checkConstructors(
+            clazz,
+            listOf(
+                ConstructorGetter(),
+                ConstructorGetter(defaultParameterTypes = listOf(identifierFactoryClazz)),
+            )
+        )
+        teamServiceTestClass.checkDeclaredMethods(clazz)
+    }
+
+    @Test
+    fun generateTeamsForOneRoundMethodTest() {
+        commonTests.team.generateTeamsForOneRoundMethodTest(
+            teamServiceTestClass,
+            generateTeamsForOneRoundMethod,
+            getTeamsStorageMethod,
+            customErrorMessage = "The `val teamsStorage = TODO(\"\")` was not added into `TeamService` or was added with an incorrect type or with an incorrect access modifier!"
+        )
+    }
+
+    @Test
     fun teamClassTest() {
         val clazz = teamClass.checkBaseDefinition()
         teamClass.checkFieldsDefinition(clazz)

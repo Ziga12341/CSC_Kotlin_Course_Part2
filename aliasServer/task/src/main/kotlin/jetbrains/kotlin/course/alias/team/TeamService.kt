@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 @Service
 class TeamService(identifierFactory: IdentifierFactory = IdentifierFactory()) {
     companion object {
-        var teamsStorage = mutableMapOf<Identifier, Team>()
+        val teamsStorage = mutableMapOf<Identifier, Team>()
     }
     /*Implement the generateTeamsForOneRound method.
      The method must generate a list of teams and also store all of them into the teamsStorage map.
@@ -16,18 +16,34 @@ class TeamService(identifierFactory: IdentifierFactory = IdentifierFactory()) {
      We need to create this method to save game results for the leaderboard.
 
      */
-    val createTeams= identifierFactory
+
+//  my code did not worked. i used code from someone else
+    private val identifierFactory = IdentifierFactory()
 
     fun generateTeamsForOneRound(teamsNumber: Int): List<Team> {
-        val listOfTeams = mutableListOf<Team>()
-        var abc = createTeams.uniqueIdentifier
-        for (teamId in createTeams){
-            listOfTeams.add(Team(teamId))
-            teamsStorage.putIfAbsent(teamId, Team(teamId))
-            println(Team(teamId))
-//            teamsStorage.putIfAbsent(IdentifierFactory(teamId), Team(teamId))
-        }
-
-        return listOfTeams
+        val teams = List(teamsNumber) { Team(identifierFactory.uniqueIdentifier()) }
+        teams.forEach { teamsStorage.putIfAbsent(it.id, it) }
+        return teams
     }
 }
+//    fun generateTeamsForOneRound(teamsNumber: Int): List<Team> {
+//        val teams = List(teamsNumber) {
+//            Team(teamsNumber)
+//        }
+
+//        val listOfTeams = mutableListOf<Team>()
+//        var lastTeamId = teamsStorage.values.map { it -> it.id }
+////        if (lastTeamId == null){
+////           lastTeamId = 0
+////        }
+//        val endFor = lastTeamId + teamsNumber
+//        println(lastTeamId)
+//        for (teamId in lastTeamId until endFor) {
+//            listOfTeams.add(Team(teamId))
+//            teamsStorage.putIfAbsent(teamId, Team(teamId))
+//            println(Team(teamId))
+////            teamsStorage.putIfAbsent(IdentifierFactory(teamId), Team(teamId))
+//        }
+//
+//        return listOfTeams
+//    }
