@@ -5,7 +5,6 @@
     <content url="file://$MODULE_DIR$/../../../../memoryTrainerServer/task">
       <excludeFolder url="file://$MODULE_DIR$/../../../../memoryTrainerServer/task/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../../memoryTrainerServer/task/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../memoryTrainerServer/task/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

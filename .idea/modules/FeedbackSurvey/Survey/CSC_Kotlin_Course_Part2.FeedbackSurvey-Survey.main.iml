@@ -47,7 +47,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
-    <output url="file://$MODULE_DIR$/../../../../FeedbackSurvey/Survey/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../../FeedbackSurvey/Survey/build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../FeedbackSurvey/Survey/src/main" />
     <orderEntry type="inheritedJdk" />

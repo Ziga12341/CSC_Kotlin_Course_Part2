@@ -114,7 +114,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
-    <output-test url="file://$MODULE_DIR$/../../../../aliasServer/task/out/test/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../../aliasServer/task/build/classes/java/test" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../aliasServer/task/src/test" />
     <content url="file://$MODULE_DIR$/../../../../aliasServer/task/test">

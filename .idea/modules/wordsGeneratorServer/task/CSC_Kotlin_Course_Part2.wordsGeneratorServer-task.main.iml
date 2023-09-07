@@ -104,7 +104,7 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
-    <output url="file://$MODULE_DIR$/../../../../wordsGeneratorServer/task/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../../wordsGeneratorServer/task/build/classes/kotlin/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../../wordsGeneratorServer/task/src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../../../wordsGeneratorServer/task/src/main/kotlin" isTestSource="false" />
